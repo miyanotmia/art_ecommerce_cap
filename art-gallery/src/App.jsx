@@ -1,16 +1,26 @@
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Landing  from "./pages/Landing";
+import Home from "./pages/Home";
+import Cart from "./components/Cart";
+import Checkout from "./pages/Checkout";
+import Navbar from "./components/Navbar";
 
-
-function App() {
+function App () {
   return (
- <div className= "min-h-screen bg-gray-100 flex flex-col items-center justify-center">
-  <h1 className="text-5xl font-bold text-gray-800 mb-4">
-    Anything Goes Art 
-  </h1>
-  <p className="text-lg text-gray-600">
-    Curating a galleries where <span className="italic">Anything goes</span>
-  </p>
- </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Landing/>}/>
+        <Route path="/*" element={
+          <div>
+            <Navbar/><Routes><Route path="home" element={<Home />}/>
+            <Route path="cart" element={<Cart />}/>
+            <Route path= "checkout" element={<Checkout />}/>
+            </Routes>
+          </div>
+        }
+        />
+      </Routes>
+    </Router>
+  );
 }
-
-export default App
+export default App;
