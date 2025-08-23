@@ -1,15 +1,11 @@
-
+import {Routes, Route } from "react-router-dom";
+import Landing from "./pages/Landing.jsx"
 
 function App() {
   return (
- <div className= "min-h-screen bg-gray-100 flex flex-col items-center justify-center">
-  <h1 className="text-5xl font-bold text-gray-800 mb-4">
-    Anything Goes Art 
-  </h1>
-  <p className="text-lg text-gray-600">
-    Curating a galleries where <span className="italic">Anything goes</span>
-  </p>
- </div>
-  )
+<Routes>
+  <Route path="/" element={<Landing/>} />
+</Routes>
+  );
 }
 export default App;
