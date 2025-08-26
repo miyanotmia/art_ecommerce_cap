@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {useNavigate} from "react-router-dom";
 
 function Landing() {
@@ -7,7 +6,7 @@ function Landing() {
 
  const enterGallery= () => {
     setTimeout(() => {
-navigate("/");
+navigate("/Home");
     }, 500);
     
  };

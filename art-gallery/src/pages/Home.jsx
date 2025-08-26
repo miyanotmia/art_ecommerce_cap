@@ -1,6 +1,5 @@
 import {useState, useEffect} from "react";
-import { data } from "react-router-dom";
-function Home ({addToCart}) {
+function Home ({addToCart, cart}) {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
@@ -12,11 +11,21 @@ fetch("/artworks.json")
 
 return (
     <div className="min-h-screen bg-amber-100 p-8">
-        <h1 className="text-4xl font-bold text-[#2C2C2C] mb-6 text-center">
+        <div className="flex justify-between items-center mb-6">
+            <h1 className="text-4xl font-bold text-[#2C2C2C] mb-6 text-center">
             Anything Goes Gallery
-        </h1>
-
-        <div className="grid grid-cols1 sm:grid-cols-2 md:gid-cols-3 gap-6">
+        </h1>      
+        <link to="/Checkout"
+className="bg-[#2C2C2C] text-white px-4 py-2 rounded hover:bg-[#444]">
+    Head to Checkout
+    {cart.length > 0 &&(
+        <span className="absolute -top-2 -right-2 g-red-600 text-white text-xs rounded-full px-2 py-1">{cart.length}
+        </span>
+    )}
+    </link>
+    </div>
+      
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {items.map((art) => (
                 <div
                 key= {art.id}
