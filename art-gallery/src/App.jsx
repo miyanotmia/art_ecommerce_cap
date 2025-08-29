@@ -3,8 +3,11 @@ import Landing from "./pages/Landing.jsx";
 import Home from "./pages/Home.jsx";
 import Checkout from "./pages/Checkout.jsx"
 import { useState } from "react";
+import Navbar from "./components/Navbar.jsx";
 function App() {
   const [cart,setCart]= useState([]);
+  
+  {/* add to cart*/}
   const addToCart=(art) => {
     setCart((prevCart) => {
       const existing= prevCart.find((item) => item.id === art.id);
@@ -17,7 +20,8 @@ function App() {
     return [...prevCart, {...art, qty:1}];
   });
 };
-  const increaseQty = (id) => {
+{/* Increase  & decrease qty */}  
+const increaseQty = (id) => {
     setCart((prevCart) =>
       prevCart.map((item)=>
     item.id === id ? {...item, qty: item.qty + 1} : item 
@@ -32,15 +36,21 @@ function App() {
   };
 
   return (
+<>
+<Navbar cart={cart} />
+
 <Routes>
+  
   <Route path="/" element={<Landing/>} />
   <Route path="/Home" element={<Home addToCart={addToCart}  cart={cart}/>} />
-  <Route path="/Checkout" element={<Checkout 
+  <Route path="/Checkout" element=
+  {<Checkout 
   cart={cart} 
   increaseQty={increaseQty}
   decreaseQty={decreaseQty} />}/>
   
 </Routes>
+</>
   );
 }
 

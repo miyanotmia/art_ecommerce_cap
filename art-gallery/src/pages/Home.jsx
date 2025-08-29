@@ -1,4 +1,6 @@
 import {useState, useEffect} from "react";
+import { FREEBIE_SYMBOL, FREEBIE_WORD } from "../utils/currency";
+
 function Home ({addToCart, cart}) {
     const [items, setItems] = useState([]);
 
@@ -10,7 +12,7 @@ fetch("/artworks.json")
 }, []);
 
 return (
-    <div className="min-h-screen bg-amber-100 p-8">
+    <div className="min-h-screen bg-amber-100 p-8 pt-24">
         <div className="flex justify-between items-center mb-6">
             <h1 className="text-4xl font-bold text-[#2C2C2C] mb-6 text-center">
             Anything Goes Gallery
@@ -39,6 +41,9 @@ className="bg-[#2C2C2C] text-white px-4 py-2 rounded hover:bg-[#444]">
                     <h2 className="text-lg font-semibold text-[#2C2C2C]">
                         {art.title}
                     </h2>
+                    <p className="text-gray-800 font-medium">
+                        {art.price}{FREEBIE_SYMBOL} ({FREEBIE_WORD (art.price)})
+                    </p>
                     <p className="text-gray-700">
                         {art.artist}
                     </p>
