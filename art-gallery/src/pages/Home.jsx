@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import { FREEBIE_SYMBOL, FREEBIE_WORD } from "../utils/currency";
+import { Link } from "react-router-dom";
 
 function Home ({addToCart, cart}) {
     const [items, setItems] = useState([]);
@@ -17,14 +18,14 @@ return (
             <h1 className="text-4xl font-bold text-[#2C2C2C] mb-6 text-center">
             Anything Goes Gallery
         </h1>      
-        <link to="/Checkout"
+        <Link to="/Checkout"
 className="bg-[#2C2C2C] text-white px-4 py-2 rounded hover:bg-[#444]">
     Head to Checkout
     {cart.length > 0 &&(
-        <span className="absolute -top-2 -right-2 g-red-600 text-white text-xs rounded-full px-2 py-1">{cart.length}
+        <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-2 py-1">{cart.length}
         </span>
     )}
-    </link>
+    </Link>
     </div>
       
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -49,7 +50,7 @@ className="bg-[#2C2C2C] text-white px-4 py-2 rounded hover:bg-[#444]">
                     </p>
                     <button onClick={(  ) => addToCart(art)}
                     className="mt-2 bg-red-950 text-white py-2 rounded">
-                        Throw inna Bag
+                          Add to cart                  
                     </button>
                     </div>
                 </div>
@@ -59,4 +60,4 @@ className="bg-[#2C2C2C] text-white px-4 py-2 rounded hover:bg-[#444]">
 );
 }
 
-export default Home
+export default Home;

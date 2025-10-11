@@ -1,8 +1,17 @@
 import { FREEBIE_SYMBOL, FREEBIE_WORD } from "../utils/currency";
+import SubscribeForm from "../components/SubscribeForm";
 
-function Checkout ({cart, increaseQty, decreaseQty}) {
+function Checkout ({cart, increaseQty, decreaseQty, setCart}) {
 
 const totalPrice = cart.reduce((sum, item)=> sum + item.price * item.qty,0);
+
+const clearCart= () => {
+    setCart([]);
+};
+
+const handleDownload = () => {
+alert("Download feature coming soon!");
+};
 
     return (
         <div className="min-h-screen bg-orange-50 p-8 pt-24">
@@ -55,6 +64,18 @@ const totalPrice = cart.reduce((sum, item)=> sum + item.price * item.qty,0);
              ))}
         </div>
           
+          {/* Clear + download buttons*/}
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                <button onClick={clearCart}
+                className="px-6 py-6 bg-red-600 text-white font-semibold rounded hover:bg-red-700">Clear Cart</button>
+                
+                <button onClick={handleDownload}
+                className="px-6 py-3 bg-green-600 text-white font-semibold rounded hover:bg-green-700">
+                    Download Cart
+                </button>
+            </div>
+            
+            {/* Tagline & Total*/}
            <p className="mt-6 text-lg italic text-gray-700 text-center">
                 Art without limits, paid in {FREEBIE_SYMBOL}.
             </p>
@@ -65,7 +86,11 @@ const totalPrice = cart.reduce((sum, item)=> sum + item.price * item.qty,0);
             </div>
             </>
             )}
-             </div>
-    );
+            <div className="mt-12">
+                    <SubscribeForm />
+                    </div>
+             </div> 
+                    
+ );
 }
 export default Checkout;
