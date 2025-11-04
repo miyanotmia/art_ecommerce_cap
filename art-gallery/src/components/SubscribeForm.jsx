@@ -34,31 +34,29 @@ function SubscribeForm(){
                 setMessage("Server error- please try again later.");
             };
             return (
-                 <div className="max-w-md mx-auto bg-[#F7F6F3] p-6 rounded-xl shadow-md mt-8">
-      <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">
+                 <div>
+      <h2>
         Stay in the Loop 🎨
       </h2>
-      <p className="text-gray-600 mb-4 text-center">
+      <p>
         Subscribe to get alerts when new artworks are added.
       </p>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit}>
         <input
         type="text"
         placeholder="Your Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
         required
-        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-700"
         />
         <button
         type="submit"
-         className="w-full bg-gray-800 text-white p-3 rounded-lg hover:bg-gray-700 transition"
         >
           Subscribe
         </button>
         </form>
-        {message && (<p className="mt-4 text-center text-gray-700 font-medium">{message}</p>
+        {message && (<p>{message}</p>
       )}
       </div>
             );

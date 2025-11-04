@@ -13,49 +13,50 @@ fetch("/artworks.json")
 }, []);
 
 return (
-    <div className="min-h-screen bg-amber-100 p-8 pt-24">
-        <div className="flex justify-between items-center mb-6">
-            <h1 className="text-4xl font-bold text-[#2C2C2C] mb-6 text-center">
+    <div>
+    <div>
+        <div>
+            <h1>
             Anything Goes Gallery
         </h1>      
-        <Link to="/Checkout"
-className="bg-[#2C2C2C] text-white px-4 py-2 rounded hover:bg-[#444]">
+        <Link to="/Checkout">
     Head to Checkout
     {cart.length > 0 &&(
-        <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-2 py-1">{cart.length}
+        <span>{cart.length}
         </span>
     )}
     </Link>
     </div>
       
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div>
             {items.map((art) => (
                 <div
                 key= {art.id}
-                className="bg-amber-100 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+                >
                     <img
                     src={art.image}
                     alt= {art.title}
-                    className="w-full h-64 object-cover"
+                    
                     />
-                    <div className="p-4">
-                    <h2 className="text-lg font-semibold text-[#2C2C2C]">
+                    <div>
+                    <h2>
                         {art.title}
                     </h2>
-                    <p className="text-gray-800 font-medium">
+                    <p>
                         {art.price}{FREEBIE_SYMBOL} ({FREEBIE_WORD (art.price)})
                     </p>
-                    <p className="text-gray-700">
+                    <p>
                         {art.artist}
                     </p>
                     <button onClick={(  ) => addToCart(art)}
-                    className="mt-2 bg-red-950 text-white py-2 rounded">
+                    >
                           Add to cart                  
                     </button>
                     </div>
                 </div>
             ))}
         </div>
+    </div>
     </div>
 );
 }
