@@ -1,6 +1,7 @@
 import {Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing.jsx";
 import Home from "./pages/Home.jsx";
+import Gallery from "./pages/Gallery.jsx";
 import Checkout from "./pages/Checkout.jsx"
 import { useState } from "react";
 import Navbar from "./components/Navbar.jsx";
@@ -42,12 +43,17 @@ const increaseQty = (id) => {
 <Routes>
   
   <Route path="/" element={<Landing/>} />
-  <Route path="/Home" element={<Home addToCart={addToCart}  cart={cart}/>} />
+  <Route path="/Home" element={<Home />} />
+  <Route path="/Gallery" element={<Gallery addToCart={addToCart}/>} />
   <Route path="/Checkout" element=
   {<Checkout 
   cart={cart} 
   increaseQty={increaseQty}
-  decreaseQty={decreaseQty} />}/>
+  decreaseQty={decreaseQty} 
+  setCart={setCart}
+  />
+} 
+  />
   
 </Routes>
 </>

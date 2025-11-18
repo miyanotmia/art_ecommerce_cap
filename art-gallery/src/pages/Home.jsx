@@ -1,64 +1,32 @@
-import {useState, useEffect} from "react";
-import { FREEBIE_SYMBOL, FREEBIE_WORD } from "../utils/currency";
-import { Link } from "react-router-dom";
+import Container from '../components/container';
+import './Home.scss';
 
-function Home ({addToCart, cart}) {
-    const [items, setItems] = useState([]);
-
-    useEffect(() => {
-fetch("/artworks.json")
-.then((res) => res.json())
-.then ((data) => setItems(data))
-.catch((err) => console.error("Error loading artworks:", err));
-}, []);
-
-return (
-    <div>
-    <div>
-        <div>
-            <h1>
-            Anything Goes Gallery
-        </h1>      
-        <Link to="/Checkout">
-    Head to Checkout
-    {cart.length > 0 &&(
-        <span>{cart.length}
-        </span>
-    )}
-    </Link>
-    </div>
+function Home() {
+  return (
+    <div className="home-page">
+      <section className="hero container">
+        <img src="/images/Anything Goes Art-logo.png" alt="Anything-goes-art-logo-with artworks" className='AGA-Banner'/>
+        
+      </section>
       
-        <div>
-            {items.map((art) => (
-                <div
-                key= {art.id}
-                >
-                    <img
-                    src={art.image}
-                    alt= {art.title}
-                    
-                    />
-                    <div>
-                    <h2>
-                        {art.title}
-                    </h2>
-                    <p>
-                        {art.price}{FREEBIE_SYMBOL} ({FREEBIE_WORD (art.price)})
-                    </p>
-                    <p>
-                        {art.artist}
-                    </p>
-                    <button onClick={(  ) => addToCart(art)}
-                    >
-                          Add to cart                  
-                    </button>
-                    </div>
-                </div>
-            ))}
-        </div>
+
+
+      <section className="slideshow container">
+        <div className='album collection'>
+          <img src='/images/both_members_of_this_club_George-Bellows.jpg' alt='Photo by George Bellows'className='album-img'></img>
+          </div>
+        
+        <div className='album collection'><img src="/images/the_church_of_souain_Felix-Vallotton.jpg" className='album-img'></img></div>
+        
+        <div className='album collection'><img src="/images/nude_women_with_a_child_in_the_forest_2012.92.695.jpg" className='album-img'></img></div>
+
+        <div className='album collection'><img src="/images/nude_women_with_a_child_in_the_forest_2012.92.695.jpg" className='album-img'></img></div>
+       
+      </section>
+
+      
     </div>
-    </div>
-);
+  );
 }
 
 export default Home;
