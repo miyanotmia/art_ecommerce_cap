@@ -1,5 +1,36 @@
 @use "../styles/variables" as *;
 
 .navbar{
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ padding: 1rem 0;
+ background-color: #4472CA;
+ color: white;
+ z-index: 1000;
+ box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+
+}
+
+.navbar_container{
+   max-width: 1200px;
+   height: 50px;
+   padding: 0 2rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.navbar_brandname{
     
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+
+    
+    a{
+        color: white;
+        text-decoration: none;
+
+    }
 }
