@@ -6,7 +6,7 @@
  left: 0;
  right: 0;
  padding: 1rem 0;
- background-color: #4472CA;
+ background-color: #8BA2FD;
  color: white;
  z-index: 1000;
  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
@@ -24,13 +24,23 @@
 
 .navbar_brandname{
     
-    font-size: 1.75rem;
+    font-size: 45px;
     letter-spacing: 1px;
-
     
     a{
         color: white;
         text-decoration: none;
+        font-family: $font-serif;
 
     }
+     
+}
+.nav-link{
+    font-family: $font-sans;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 5px;
+
+    
 }

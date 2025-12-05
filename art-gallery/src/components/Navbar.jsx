@@ -17,7 +17,7 @@ function Navbar ({cart}) {
         <div className="navbar_container">
         {/*Site Name */}
         <h1 className="navbar_brandname">
-            <Link to="/">Anything Goes Art </Link>
+            <Link to="/Home">Anything Goes Art </Link>
         </h1>
        
        {/*Site links*/}

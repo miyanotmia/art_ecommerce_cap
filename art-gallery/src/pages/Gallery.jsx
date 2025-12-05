@@ -16,9 +16,7 @@ return (
     <div>
     <div>
         <div>
-            <h1>
-            Anything Goes Gallery
-        </h1>      
+                 
         <Link to="/Checkout">
     Head to Checkout
     {cart.length > 0 &&(

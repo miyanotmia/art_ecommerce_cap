@@ -1,7 +1,8 @@
 @use '../styles/variables' as *;
 
 .home-page {
-  background-color: #fde68a;
+ 
+   background: linear-gradient(to bottom, #FEF3C5, #fde68a);
   min-height: 20%;
   width: 100%;
   padding: 3rem 0;
@@ -27,6 +28,7 @@
 
     @media (min-width: 768px) {
       flex-direction: row;
+      max-width: 80%;
     }
 
     

@@ -1,4 +1,5 @@
 import {useNavigate} from "react-router-dom";
+import "./landing.scss";
 
 function Landing() {
  const navigate=useNavigate();
@@ -11,14 +12,14 @@ navigate("/Home");
     
  };
   return (
- <div>
+ <div className="enter-gallery">
   <h1>
     Anything Goes Art 
   </h1>
   <p>
-    Curating galleries where <span>Anything goes</span>
+    Digital gallery where <span className="enter-subtitle">Anything goes</span>
   </p>
-  <button onClick={enterGallery}> Enter Gallery </button>
+  <button onClick={enterGallery} > Enter </button>
  </div>
   );
 }

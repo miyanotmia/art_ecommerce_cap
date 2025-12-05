@@ -20,7 +20,7 @@ function Home() {
         
         <div className='album collection'><img src="/images/nude_women_with_a_child_in_the_forest_2012.92.695.jpg" className='album-img'></img></div>
 
-        <div className='album collection'><img src="/images/nude_women_with_a_child_in_the_forest_2012.92.695.jpg" className='album-img'></img></div>
+        {/*<div className='album collection'><img src="/images/nude_women_with_a_child_in_the_forest_2012.92.695.jpg" className='album-img'></img></div>*/}
        
       </section>
 
