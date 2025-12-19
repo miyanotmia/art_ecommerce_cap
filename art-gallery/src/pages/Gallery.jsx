@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import { FREEBIE_SYMBOL, FREEBIE_WORD } from "../utils/currency";
 import { Link } from "react-router-dom";
+import "./gallery.scss";
 
 function Gallery ({addToCart, cart}) {
     const [items, setItems] = useState([]);
@@ -26,9 +27,9 @@ return (
     </Link>
     </div>
       
-        <div>
+        <div className="gallery">
             {items.map((art) => (
-                <div
+                <div className="gallery-card"
                 key= {art.id}
                 >
                     <img
