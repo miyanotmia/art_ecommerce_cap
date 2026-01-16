@@ -37,7 +37,7 @@ return (
                     alt= {art.title}
                     
                     />
-                    <div>
+                    <div className="card-text">
                     <h2>
                         {art.title}
                     </h2>
@@ -47,8 +47,7 @@ return (
                     <p>
                         {art.artist}
                     </p>
-                    <button onClick={(  ) => addToCart(art)}
-                    >
+                    <button className="gallery-button" onClick={() => addToCart(art)}>
                           Add to cart                  
                     </button>
                     </div>

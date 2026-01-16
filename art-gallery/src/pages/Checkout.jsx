@@ -1,5 +1,6 @@
 import { FREEBIE_SYMBOL, FREEBIE_WORD } from "../utils/currency";
 import SubscribeForm from "../components/SubscribeForm";
+import "./checkout.scss";
 
 function Checkout ({cart, increaseQty, decreaseQty, setCart}) {
 
@@ -30,7 +31,7 @@ alert("Download feature coming soon!");
                 <div 
                 key={art.id}
                 > 
-                <img
+                <img className="checkout-img"
                 src={art.image}
                 alt={art.title}
                  />

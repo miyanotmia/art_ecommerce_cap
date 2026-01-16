@@ -44,7 +44,7 @@ const increaseQty = (id) => {
   
   <Route path="/" element={<Landing/>} />
   <Route path="/Home" element={<Home />} />
-  <Route path="/Gallery" element={<Gallery cart={cart}/>} />
+  <Route path="/Gallery" element={<Gallery cart={cart} addToCart={addToCart}/>} />
   <Route path="/Checkout" element=
   {<Checkout 
   cart={cart} 
