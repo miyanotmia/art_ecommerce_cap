@@ -14,4 +14,14 @@ router.get("/", async (req,res) => {
     }
 });
 
+//POST new product
+router.post("/", async(req, res)=>{
+    try{
+        const newProduct= new Product(req.body);
+        await newProduct.save();
+        res.status(201).json(newProduct);
+    } catch (err){
+        res.status(400).json({error:"Failed to add product"});
+    }
+});
 export default router;
