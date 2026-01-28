@@ -29,7 +29,7 @@ alert("Download feature coming soon!");
                 <div>
                     {cart.map((art) => (
                 <div 
-                key={art.id}
+                key={art._id}
                 > 
                 <img className="checkout-img"
                 src={art.image}
@@ -47,7 +47,7 @@ alert("Download feature coming soon!");
             </p>
 
             <div>
-                <button onClick={()=> decreaseQty(art.id)}
+                <button onClick={()=> decreaseQty(art._id)}
                 >
                     -
                 </button>
@@ -55,7 +55,7 @@ alert("Download feature coming soon!");
                 <span>{art.qty}</span>
 
                 <button
-                onClick={() => increaseQty(art.id)}
+                onClick={() => increaseQty(art._id)}
                 >
                     +
                 </button>

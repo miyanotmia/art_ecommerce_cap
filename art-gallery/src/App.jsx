@@ -11,12 +11,12 @@ function App() {
   {/* add to cart*/}
   const addToCart=(art) => {
     setCart((prevCart) => {
-      const existing= prevCart.find((item) => item.id === art.id);
+      const existing= prevCart.find((item) => item.id === art._id);
   
   
    if (existing){
       return prevCart.map((item) =>
-        item.id === art.id ? {...item, qty: item.qty +1} : item);
+        item.id === art._id ? {...item, qty: item.qty +1} : item);
     }
     return [...prevCart, {...art, qty:1}];
   });

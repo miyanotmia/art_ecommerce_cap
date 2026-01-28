@@ -6,12 +6,17 @@ import "./gallery.scss";
 function Gallery ({addToCart, cart}) {
     const [items, setItems] = useState([]);
 
-    useEffect(() => {
-fetch("/artworks.json")
+useEffect(() => {
+fetch("http://localhost:5000/api/products")
 .then((res) => res.json())
-.then ((data) => setItems(data))
+.then ((data) => {
+    console.log("RAW fetch Data", data);
+    setItems(data);
+})
 .catch((err) => console.error("Error loading artworks:", err));
 }, []);
+
+console.log("Gallery items state", items);
 
 return (
     <div>
@@ -27,10 +32,14 @@ return (
     </Link>
     </div>
       
+
         <div className="gallery">
-            {items.map((art) => (
+            {items.map((art) => {
+                console.log("art.image:", art.image);
+                
+                return ( 
                 <div className="gallery-card"
-                key= {art.id}
+                key= {art._id}
                 >
                     <img
                     src={art.image}
@@ -52,7 +61,9 @@ return (
                     </button>
                     </div>
                 </div>
-            ))}
+            );
+})}
+        
         </div>
     </div>
     </div>
