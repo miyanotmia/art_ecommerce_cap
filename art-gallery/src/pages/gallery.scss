@@ -7,6 +7,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    padding-top: 100px;
 }
 .gallery-card{
     background: #f7f6f3;
@@ -23,15 +24,23 @@
      }
      
      img{
-        width:100%;
+      padding-top: 20px;
+      padding-left: 25px;
+        
+      width:80%;
         height: 280px;
         object-fit: cover;
      }
      .card-text{
+      width: 90%;
       text-align: center;
      }
      .gallery-button{
       width: 50%;
-      justify-content: center;
+      
+      margin-right: 100px;
+      margin-bottom: 10px;
+      margin-left: 75px;
+      
      }
 }

@@ -110,5 +110,19 @@
         "artist": "Clara Peeters",
         "image":"./images/still_life_with_flowers_surrounded_by_insects_and_a_snail_2018.144.1.jpg",
         "price":876
+    },
+    {
+        
+        "title":"The Lute Player",
+        "artist": "Albert Besnard",
+        "image":"/images/the-lute-player.jpg",
+        "price":1000
+    },
+    {
+        
+        "title":"Head of Dr.Baur",
+        "artist": "Ernst Ludwig Kirchner",
+        "image":"/images/hHead-of-Dr-Bauer",
+        "price":10000000
     }
 ]

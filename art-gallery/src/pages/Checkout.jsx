@@ -15,18 +15,18 @@ alert("Download feature coming soon!");
 };
 
     return (
-        <div>
-            <h1>
+        <div className="checkout">
+            <h1 className="checkout__title">
                 Checkout
             </h1>
             
             {cart.length === 0 ?(
                 <p>
-                    Your bag is empty. Add some art why don'tcha?
+                    Your bag is empty. Head to the gallery to add some art.
                 </p>
              ) : (
                 <>
-                <div>
+                <div className="checkout-card">
                     {cart.map((art) => (
                 <div 
                 key={art._id}
@@ -36,7 +36,7 @@ alert("Download feature coming soon!");
                 alt={art.title}
                  />
                 
-            <div>
+            <div className="checkout__info">
                 <h2>
                     {art.title}
                     </h2>
@@ -46,15 +46,15 @@ alert("Download feature coming soon!");
                 {art.price}{FREEBIE_SYMBOL} * {art.qty}
             </p>
 
-            <div>
-                <button onClick={()=> decreaseQty(art._id)}
+            <div className="qty">
+                <button className="qty-btn" onClick={()=> decreaseQty(art._id)}
                 >
                     -
                 </button>
                 
-                <span>{art.qty}</span>
+                <span className="qty-value">{art.qty}</span>
 
-                <button
+                <button className="qty-btn"
                 onClick={() => increaseQty(art._id)}
                 >
                     +
@@ -67,12 +67,12 @@ alert("Download feature coming soon!");
           
           {/* Clear + download buttons*/}
             <div>
-                <button onClick={clearCart}
-                >Clear Cart</button>
+                <button className="clear-cart" onClick={clearCart}
+                >Clear </button>
                 
-                <button onClick={handleDownload}
+                <button className="download" onClick={handleDownload}
                 >
-                    Download Cart
+                    Download 
                 </button>
             </div>
             
@@ -80,10 +80,13 @@ alert("Download feature coming soon!");
            <p>
                 Art without limits, paid in {FREEBIE_SYMBOL}.
             </p>
-            <div>
+            <div className="checkout-summary">
                 <h2>
-                    Total: {totalPrice.toFixed(0)} {FREEBIE_SYMBOL}({FREEBIE_WORD(totalPrice)})
-                </h2>
+                    Checkout Summary
+                    </h2>
+                   <p className="total"> Total: {totalPrice.toFixed(0)} {FREEBIE_SYMBOL}({FREEBIE_WORD(totalPrice)})
+                    </p>
+                
             </div>
             </>
             )}

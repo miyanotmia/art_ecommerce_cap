@@ -10,13 +10,12 @@ useEffect(() => {
 fetch("http://localhost:5000/api/products")
 .then((res) => res.json())
 .then ((data) => {
-    console.log("RAW fetch Data", data);
     setItems(data);
 })
 .catch((err) => console.error("Error loading artworks:", err));
 }, []);
 
-console.log("Gallery items state", items);
+
 
 return (
     <div>
@@ -35,7 +34,7 @@ return (
 
         <div className="gallery">
             {items.map((art) => {
-                console.log("art.image:", art.image);
+                
                 
                 return ( 
                 <div className="gallery-card"
